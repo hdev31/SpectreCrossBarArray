@@ -1,0 +1,10 @@
+?circuit: model*
+
+model: ".model" | ".MODEL"
+
+COMMENT: /\*[^\n]*/
+%ignore COMMENT
+
+%import common.WS
+%ignore WS
+

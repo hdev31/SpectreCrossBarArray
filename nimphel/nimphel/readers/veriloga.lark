@@ -1,0 +1,13 @@
+?start: component+
+
+component: "module"
+
+%import common.INT
+%import common.ESCAPED_STRING
+%import common.SIGNED_NUMBER -> NUMBER
+%import common.NEWLINE -> NL
+
+COMMENT: /\/\/[^\n]*/
+%ignore COMMENT
+%import common.WS
+%ignore WS
