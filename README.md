@@ -86,3 +86,7 @@ Parameters :
 - numberOfProcessVariabilityFiles : number of process variability files
 
 > Use : python3 generateAllNetlists.py
+
+## Simulation
+
+Please see tuto_spectre.md for details on how to simulate a netlist in spectre.
