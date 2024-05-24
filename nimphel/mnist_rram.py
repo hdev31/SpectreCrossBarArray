@@ -54,21 +54,6 @@ with open(args.input_file, "r") as fin:
         circuit.add(Vsource.new(dict(VDD=i, GND=0), params={"dc": line[i]}))
 fin.close()
 
-# circuit.add([Vsource.new(dict(VDD=i,GND=0), params={"dc": 1}) for i in nets_in])
-
-
-
-
-# with open("../data/weights.csv", "r") as f1:
-#     for i in nets_in: # Iteration on inputs and then on columns
-#         listOfWeights = f1.readline().split(",")
-#         listOfWeights = [float(i) for i in listOfWeights]
-#         for o in range(len(nets_col)):
-#             # print(weightToResistance(listOfWeights[o], Rmin, Rmax))
-#             inst = Mem.new(dict(P=i, N=nets_col[o]), params={"r" : weightToResistance(listOfWeights[o], Rmin, Rmax)})
-#             circuit.add(inst)
-
-# f1.close()
 
 with open(args.resistor_file, "r") as fr:
     for i in nets_in:
@@ -93,13 +78,6 @@ frneg.close()
 
 
     
-
-
-# for i, o_neg in product(nets_in, nets_col_neg):
-#     # Adds a 10 % process variability to the resistor value
-#     r = np.random.uniform(Rmin, Rmax, 1) 
-#     inst = Mem.new(dict(P=i, N=o_neg), params={"r": r[0] + np.random.uniform(0, 0.1*(Rmax-Rmin), 1)[0]})
-#     circuit.add(inst)
 
 writer = SpectreWriter()
 

@@ -16,42 +16,6 @@ inputfilepath = "../data/inputs_inverted.csv"
 outputfilepath = "./INPUTS/inputs"
 
 
-# # Map inputs to DC Voltage (DAC)
-
-# with open(inputfilepath, "r") as finput:
-#     listOfInputs = finput.readline().split(",")
-#     listOfInputs = [float(i) for i in listOfInputs]
-#     # Take only input sets with more than 100 non zero values (arbitrary)
-#     numberOfNonZeroValues = 0
-#     for i in range(len(listOfInputs)):
-#         if(listOfInputs[i] != 0):
-#             numberOfNonZeroValues += 1
-#     k = 0
-#     # Change lines if there is less than 100 non zero values
-#     while(k < numberOfInputs):
-#         numberOfNonZeroValues = 0
-#         while(numberOfNonZeroValues < minNumberOfNonZeroValues):
-#             listOfInputs = finput.readline().split(",")
-#             listOfInputs = [float(i) for i in listOfInputs]
-#             numberOfNonZeroValues = 0
-#             for i in range(len(listOfInputs)):
-#                 if(listOfInputs[i] != 0):
-#                     numberOfNonZeroValues += 1
-#             #print(listOfInputs)
-#             # Quantization
-#             listOfInputs = [int(i*(2**(dacBits) - 1)) for i in listOfInputs]
-#             #print(listOfInputs)
-#             # Mapping 
-#             listOfInputs = [(i/(2**(dacBits) - 1)) * (setVoltageup - setVoltagelow) + setVoltagelow for i in listOfInputs]
-#             #print(listOfInputs)
-#         # Append to an input file
-#         outputfilepathcurr = outputfilepath + "_" + str(k) + ".csv"
-#         with open(outputfilepathcurr, "w+") as f1:
-#             listOfInputs = [str(i) for i in listOfInputs]
-#             f1.write(','.join(listOfInputs) + "\n")
-#         f1.close()
-#         k += 1
-# finput.close()
 
 with open(inputfilepath, "r") as finput:
     k = 0

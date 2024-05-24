@@ -1,9 +1,14 @@
 import matplotlib.pyplot as plt
 import numpy as np
 
+
+positiveCurrentfilepath = "./CURRENTS/positivecurrent.txt"
+negativeCurrentfilepath = "./CURRENTS/negativecurrent.txt"
+
+
 # Stores current values in order from COL_000 to COL_099 in a list
 
-with open("positivecurrent.txt", "r", encoding="utf8") as f1:
+with open(positiveCurrentfilepath, "r", encoding="utf8") as f1:
     f1.readline()
     f1.readline()
     f1.readline()
@@ -23,7 +28,7 @@ print(listOfPositiveCurrent)
 
 # Stores current values in order from COLN_000 to COLN_099 in a list
 
-with open("negativecurrent.txt", "r", encoding="utf8") as f1:
+with open(negativeCurrentfilepath, "r", encoding="utf8") as f1:
     f1.readline()
     f1.readline()
     f1.readline()

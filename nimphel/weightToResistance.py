@@ -8,10 +8,8 @@ Rmax = 1e6
 # Process variability 
 processVariability = True
 numberOfGenerations = 20
+sigma = 0.03*(Rmax - Rmin)
 
-# Need to normalize weight
-max_weights_positive = 0
-min_weights_negative = 0
 
 # Number of rows
 rows = 784
@@ -25,6 +23,13 @@ resistanceFilePathNeg = "./RESISTANCES/resistances_neg.csv"
 # Process variability base file path : (files will be named from filepath_0 to filepath_numberOfGenerations)
 processVariabilityFilePath = "./RESISTANCES/processvariabiliy" 
 
+
+# CODE ---------------------------------------------------------------------
+
+
+# Need to normalize weight
+max_weights_positive = 0
+min_weights_negative = 0
 with open(inputFilePath, "r") as f1:
     for i in range(rows): # Iteration on inputs and then on columns
         listOfWeights = f1.readline().split(",")
@@ -76,16 +81,7 @@ with open(inputFilePath, "r") as f2:
 f2.close()
 f3.close()
 
-# Distribution normale
-# Rn est la valeur moyenne des résistances des poids entrainés 
-# Rn = (Rmax + Rmin)/2
-#Rv = np.random.normal(Rn, sigma)
-# Rdelta = np.random.normal(0, sigma)
 
-sigma = 0.03*(Rmax - Rmin)
-
-
-# Et on fait RN + Rdelta a chaque fois
 
 if(processVariability == True):
     for i in range(numberOfGenerations):
